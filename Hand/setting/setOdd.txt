@@ -1,0 +1,1 @@
+setOdd: cardArray	| handArray |	handArray := OrderedCollection new.		1 to: 10 do: [ :i |		i \\ 2 = 0 ifFalse: [ handArray add: (cardArray at: i) ]	].		hand := handArray.
