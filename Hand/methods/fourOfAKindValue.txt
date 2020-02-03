@@ -1,0 +1,5 @@
+fourOfAKindValue
+	| firstElement |
+	firstElement := (hand at: 1)\\13.
+	hand do: [ :item | (firstElement == (item\\13) ) ifTrue: [ ^firstElement] ].
+	^ (hand at: 2)\\13

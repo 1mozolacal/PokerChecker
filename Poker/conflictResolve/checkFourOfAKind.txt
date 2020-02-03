@@ -1,0 +1,2 @@
+checkFourOfAKind: deckA against: deckB
+	^ ( deckA fourOfAKindValue > deckB fourOfAKindValue)

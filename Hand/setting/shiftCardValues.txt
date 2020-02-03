@@ -1,0 +1,2 @@
+shiftCardValues: oldVal
+	( oldVal \\ 13 == 1) ifTrue: [ ^(oldVal+11) ];ifFalse: [ ^(oldVal-2) ].

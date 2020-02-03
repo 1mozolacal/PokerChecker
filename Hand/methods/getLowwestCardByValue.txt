@@ -1,0 +1,7 @@
+getLowwestCardByValue
+	"This is return the lowwest card face value (ace highest, 2 is lowwest)"
+
+	| lowwestValue |
+	lowwestValue := (hand at: 1)\\13.
+	hand do: [ :item | lowwestValue := lowwestValue min: item\\13 ].
+	^ lowwestValue

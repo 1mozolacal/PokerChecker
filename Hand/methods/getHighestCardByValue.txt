@@ -1,0 +1,7 @@
+getHighestCardByValue
+	"This is return the lowwest card face value (ace highest, 2 is lowwest)"
+
+	| highestValue |
+	highestValue := (hand at: 1)\\13.
+	hand do: [ :item | highestValue := highestValue max: (item\\13) ].
+	^ highestValue
