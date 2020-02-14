@@ -1,1 +1,1 @@
-deal: cardArray	| hand1 hand2 |	hand1 := OrderedCollection new.	hand2 := OrderedCollection new.		1 to: 10 do: [ :i |		i \\ 2 = 0 ifTrue: [ hand1 add: (cardArray at: i) ]		ifFalse: [ hand2 add: (cardArray at: i) ]	].	
+deal: cardArray	| hand1 hand2 |		hand1 := Hand new.	hand2 := Hand new.		hand1 setOdd: cardArray.	hand2 setEven: cardArray.	hands := #(hand1 hand2)	
