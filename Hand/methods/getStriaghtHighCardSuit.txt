@@ -1,0 +1,10 @@
+getStriaghtHighCardSuit
+	"comment stating purpose of instance-side message"
+	"scope: class-variables  &  instance-variables"	
+	
+	| highestValue returnSuit |
+	highestValue := (hand at: 1)\\13.
+	returnSuit := (hand at:1)//4.
+	hand do: [ :card | ((card\\13)>highestValue) ifTrue: [ highestValue := card\\13. returnSuit := card//4 ] ].
+	^returnSuit.
+	

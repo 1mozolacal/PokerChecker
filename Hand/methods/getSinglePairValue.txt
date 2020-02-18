@@ -1,0 +1,2 @@
+getSinglePairValue
+	^ self findUniqueRepeatOfAmount: 2
