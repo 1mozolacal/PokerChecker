@@ -1,0 +1,1 @@
+isFlush	| suit |		suit := (hand at: 1) // 13.		2 to: 5 do: [ :i |		((hand at: i) // 13) == suit ifFalse: [ ^false ]	].	^true.

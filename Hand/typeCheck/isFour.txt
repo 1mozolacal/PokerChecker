@@ -1,0 +1,1 @@
+isFour	| first second handArray |		handArray := hand collect: [ :e | e \\ 13].		first := handArray select: [ :e | e == (handArray at: 1)].	second := handArray select: [ :e | e == (handArray at: 2)].		((first size) ==  4) | ((second size) == 4) ifTrue: [ 		^true.	] ifFalse: [ ^false ].

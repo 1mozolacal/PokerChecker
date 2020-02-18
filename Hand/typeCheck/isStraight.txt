@@ -1,1 +1,1 @@
-isStraight	| handArray |		handArray := OrderedCollection new.		hand do: [ :i | handArray add: (i\\13). ].		1 to: 4 do: [ :i |		(handArray at: i) < (handArray at: (i+1))  ifFalse: [ ^false ]	].	^true.
+isStraight	| handArray |		handArray := hand collect: [ :e | e \\ 13].		1 to: 4 do: [ :i |		((handArray at: 1) == 12) ifTrue: [			((handArray at: 2) == 0) ifFalse: [ ^false ].		] ifFalse: [			(handArray at: i) == ((handArray at: (i+1)) - 1)  ifFalse: [ ^false ].		]].	^true.

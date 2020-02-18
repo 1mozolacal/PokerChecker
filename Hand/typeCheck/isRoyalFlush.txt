@@ -1,0 +1,1 @@
+isRoyalFlush 		(((hand at: 1) \\ 13) == 8) ifTrue: [ 		(self isStraight) & (self isFlush) ifTrue: [ 			^true. 		] ifFalse: [ ^false ].	] ifFalse: [ ^false ].
