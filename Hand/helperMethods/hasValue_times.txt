@@ -2,5 +2,5 @@ hasValue: value times: amount
 	"check to see if there a value(the number/face of a card) that is in this hand exactly 'amount' number of times"
 	| counter |
 	counter := 0.
-	hand do: [ :card | ((card//13)==value) ifTrue: [ counter:=counter+1 ] ].
+	hand do: [ :card | ((card\\13)==value) ifTrue: [ counter:=counter+1 ] ].
 	^ (counter == amount)

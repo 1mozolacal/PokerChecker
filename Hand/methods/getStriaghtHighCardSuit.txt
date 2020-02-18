@@ -4,7 +4,7 @@ getStriaghtHighCardSuit
 	
 	| highestValue returnSuit |
 	highestValue := (hand at: 1)\\13.
-	returnSuit := (hand at:1)//4.
-	hand do: [ :card | ((card\\13)>highestValue) ifTrue: [ highestValue := card\\13. returnSuit := card//4 ] ].
+	returnSuit := (hand at:1)//13.
+	hand do: [ :card | ((card\\13)>highestValue) ifTrue: [ highestValue := card\\13. returnSuit := card//13 ] ].
 	^returnSuit.
 	
