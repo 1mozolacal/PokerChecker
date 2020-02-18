@@ -1,0 +1,9 @@
+getFullHouseValue
+	"Will return an array of (the value of the 3 of a kind, the value of the pair"
+	
+	| returnValues |
+	returnValues := Array new: 2.
+	
+	returnValues at: 1 put: ( self findUniqueRepeatOfAmount: 3).
+	returnValues at: 2 put: ( self findUniqueRepeatOfAmount: 2).
+	^returnValues 

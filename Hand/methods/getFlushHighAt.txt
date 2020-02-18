@@ -1,0 +1,11 @@
+getFlushHighCardAt: rank
+	"Rank is the highest/second hightest ... etc where 5 is highest and 1 is the lowwest"
+	
+			
+	| valueCopyOfHand counter  |
+	valueCopyOfHand := Array new: hand size.
+	counter := 1.
+	hand do: [ :card | valueCopyOfHand at: counter put: (card\\13) . counter:=counter+1 ].
+	
+	valueCopyOfHand sort.
+	^ valueCopyOfHand at: rank.

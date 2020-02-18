@@ -1,0 +1,2 @@
+getThreeOfAKindValue	
+	^self findUniqueRepeatOfAmount: 3.
