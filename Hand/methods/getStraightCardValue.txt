@@ -1,0 +1,14 @@
+getStraightHighCardValue
+	"Gives the value of the highest card in a straight"	
+	
+	| useAceAsLow tempVal valueList |
+	useAceAsLow := ((self hasCardValue: 12) & (( self hasCardValue: 11 ) not ) ).
+	valueList := Array new: (hand size).
+	
+	1 to: hand size do: [ :cardPosition | 
+		tempVal := ( (hand at: cardPosition)\\13).
+		( useAceAsLow & (tempVal==12)) ifTrue: [ valueList at: cardPosition put: -1 ] ifFalse: [ valueList at: cardPosition put: tempVal  ]. 
+		 ].
+	
+	valueList sort.
+	^ valueList at: (valueList size)

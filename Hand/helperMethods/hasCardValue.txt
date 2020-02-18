@@ -1,0 +1,4 @@
+hasCardValue: value
+	
+	hand do: [ :card | ( (card\\13) == value) ifTrue: [ ^true ] ].
+	^ false
