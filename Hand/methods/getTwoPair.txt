@@ -1,0 +1,14 @@
+getTwoPair
+	"In the return array the higher value pair will be first and the lowwer value Pair will be second"
+	| returnArray tempPair|
+	returnArray := Array new: 2.
+	returnArray at: 1 put: -1.
+	returnArray at: 2 put: -1.
+	hand do: [ :card |  
+		tempPair := self hasValue: (card\\13) times: 2.
+		( tempPair )ifTrue: [ 
+			((card\\13)>(returnArray at: 1)) ifTrue: [ returnArray at: 2 put: (returnArray at: 1). returnArray at: 1 put: (card\\13). ].
+			((card\\13)>(returnArray at: 2)) ifTrue: [ returnArray at: 1 put: (card\\13) ]. 
+			].
+		 ].
+	^returnArray.
