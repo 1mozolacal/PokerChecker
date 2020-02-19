@@ -1,3 +1,1 @@
-checkRoyalFlush: deckA against: deckB
-	"Will return true if A is the win else returns false for b being the winner"
-	^( deckA anyCard > deckB anyCard )
+checkRoyalFlush: deckA against: deckB	"Will return true if A is the win else returns false for b being the winner"	deckA anyCard > deckB anyCard ifTrue: [ ^deckA. ]	ifFalse: [ ^deckB ].

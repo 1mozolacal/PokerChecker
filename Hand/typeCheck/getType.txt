@@ -1,0 +1,1 @@
+getType		self isRoyalFlush ifTrue: [ ^10 ].	self isStraightFlush ifTrue: [ ^9 ].	self isFour ifTrue: [ ^8 ].	self isFullHouse ifTrue: [ ^7 ].	self isFlush ifTrue: [ ^6 ].	self isStraight ifTrue: [ ^5 ].	self isThree ifTrue: [ ^4 ].	self isTwo ifTrue: [ ^3 ].	self isPair ifTrue: [ ^2 ].		^1.
