@@ -1,1 +1,1 @@
-deal: cardArray	| hand1 hand2 |		hand1 := Hand new.	hand2 := Hand new.		hand1 setOdd: cardArray.	hand2 setEven: cardArray.	hands := #(hand1 hand2)	
+deal: cardArray	| hand1 hand2 type1 type2|		hand1 := Hand new.	hand2 := Hand new.		hand1 setOdd: cardArray.	hand2 setEven: cardArray.	type1 := hand1 getType.	type2 := hand2 getType.		type1 > type2 ifTrue: [ 		^hand1 getHand.	] ifFalse: [		type2 > type1 ifTrue: [ 			^hand2 getHand.		] ifFalse: [ 			^(self conflictResolve: hand1 and: hand2) getHand.		].	].	

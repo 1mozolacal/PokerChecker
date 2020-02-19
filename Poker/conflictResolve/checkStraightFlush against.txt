@@ -1,8 +1,1 @@
-checkStraightFlush: deckA against: deckB
-	| highestA highestB |
-	highestA := deckA getHighestCardByValue .
-	highestB := deckB getHighestCardByValue .
-	(highestA>highestB ) ifTrue: [ ^True ].
-	(highestB>highestA ) ifTrue: [ ^False ].
-	^( deckA anyCard > deckB anyCard)
-	
+checkStraightFlush: deckA against: deckB	| highestA highestB |	highestA := deckA getHighestCardByValue .	highestB := deckB getHighestCardByValue .	(highestA>highestB ) ifTrue: [ ^deckA ].	(highestB>highestA ) ifTrue: [ ^deckB ].	deckA anyCard > deckB anyCard ifTrue: [ ^deckA ]	ifFalse: [ ^deckB ].	
