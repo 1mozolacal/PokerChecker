@@ -1,0 +1,9 @@
+checkFlush: handA against: handB
+	| aCurrent bCurrent |
+	5 to: 1 by: -1 do: [:x | 
+		aCurrent := handA getFlushHighCardAt: x.
+		bCurrent := handB getFlushHighCardAt: x.
+		(aCurrent > bCurrent) ifTrue: [ ^handA  ].
+		(aCurrent < bCurrent) ifTrue: [ ^handB ]. 
+		 ].
+	^ (handA getFlushHighCardSuit > handB getFlushHighCardSuit) ifTrue: [ ^handA ] ifFalse: [  ^handB ] 
