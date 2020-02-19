@@ -1,0 +1,2 @@
+isPair
+	^ ( self findUniqueRepeatOfAmount: 2 == -1) not.

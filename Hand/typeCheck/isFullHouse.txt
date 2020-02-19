@@ -1,0 +1,6 @@
+isFullHouse
+	"comment stating purpose of instance-side message"
+	"scope: class-variables  &  instance-variables"	
+	| fullHouseArray |
+	fullHouseArray := self getFullHouseValue .		
+	^ ( ((fullHouseArray at: 1) == -1) | ((fullHouseArray at: 2) == -1)) not.
