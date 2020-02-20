@@ -1,0 +1,1 @@
+checkOnePair: hand1 against: hand2	((hand1 getTwoPair) at: 1) > ((hand1 getTwoPair) at: 1) ifTrue: [ ^hand1 ].	((hand1 getTwoPair) at: 1) < ((hand1 getTwoPair) at: 1) ifTrue: [ ^hand2 ].		^(self checkHighCard: hand1 against: hand2).

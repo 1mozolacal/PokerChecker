@@ -1,1 +1,1 @@
-checkHighCard: hand1 against: hand2 	((hand1 getTwoPair) at: 1) > ((hand2 getTwoPair) at: 1) ifTrue: [ ^hand1 ].
+checkHighCard: hand1 against: hand2 	5 to: 1 by: -1 do: [ :i |		((hand1 at: i) \\ 13) > ((hand2 at: i) \\ 13) ifTrue: [ ^hand1 ].		((hand1 at: i) \\ 13) < ((hand2 at: i) \\ 13) ifTrue: [ ^hand1 ].	].		5 to: 1 by: -1 do: [ :i |		(hand1 at: i) > (hand2 at: i) ifTrue: [ ^hand1 ].		(hand1 at: i) < (hand2 at: i) ifTrue: [ ^hand1 ].	].
