@@ -1,0 +1,3 @@
+checkFullHouse: deckA against: deckB
+	"comment stating purpose of instance-side message"
+	^(deckA getThreeOfAKindValue > deckB getThreeOfAKindValue)
