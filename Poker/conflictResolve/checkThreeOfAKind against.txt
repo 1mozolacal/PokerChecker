@@ -1,0 +1,1 @@
+checkThreeOfAKind: hand1 against: hand2	hand1 getThreeOfAKindValue > hand2 getThreeOfAKindValue ifTrue: [ ^hand1 ].	hand1 getThreeOfAKindValue < hand2 getThreeOfAKindValue ifTrue: [ ^hand2 ].
