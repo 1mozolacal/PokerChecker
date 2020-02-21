@@ -1,7 +1,9 @@
 | mainArray returnVal tempPoker passArray counter isSame testCaseName|
 
 mainArray := #( 
-#( #(1 2 3 4 5) #(6 7 8 9 10) #(1 2 3 4 5) ) 
+#( #(1 2 3 4 5) #(6 7 8 9 10) #(6 7 8 9 10) ) 
+#( #(1 2 3 4 5) #(6 7 8 9 10) #(6 7 8 9 11) ) 
+#( #(1 2 3 4 5) #(6 7 8 9 10) #(6 7 8 9 10) ) 
  ).
 
 Transcript clear.
@@ -16,16 +18,13 @@ mainArray do: [ :testCase |
 	
 	returnVal := tempPoker deal: passArray.
 	
-	Transcript show: returnVal class.
 	"now check if equal"
 	isSame := true.
 	1 to: 5 do: [ :checkAt | ((returnVal at: checkAt) == ((testCase at:3) at: checkAt) ) ifFalse: [ isSame:=false ]. ].
 	
-	testCaseName := 'Test Case: ' , (passArray asString) , ' ->expected: ' , (testCase at:3) .
+	testCaseName := 'Test Case: ' , (passArray asString) , ' ->expected: ' , ((testCase at:3) asString) .
 	
-	isSame ifTrue: [ Transcript show: ' Passed ' , testCaseName ; cr. ] 
-	ifFalse: [ Transcript show: 'FAILED!!! at: ' , testCaseName , ' GOT--> ' ,  (returnVal asString) ].
+	isSame ifTrue: [ Transcript show: 'Passed ' , testCaseName ; cr. ] 
+	ifFalse: [ Transcript show: 'FAILED!!! at: ' , testCaseName , ' GOT--> ' ,  (returnVal asString); cr. ].
 	
 	 ].
-
-Transcript show: mainArray.
