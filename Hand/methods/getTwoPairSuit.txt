@@ -2,10 +2,11 @@ getTwoPairSuit
 	"In the return array the higher value pair will be first and the lowwer value Pair will be second"
 	| highestPair tempPair returnSuit|
 	highestPair := -1.
+	returnSuit := -1.
 	hand do: [ :card |  
 		tempPair := self hasValue: (card\\13) times: 2.
 		( tempPair )ifTrue: [ 
-			((card\\13)>(highestPair)) ifTrue: [ highestPair := (card\\13). returnSuit := (card//13). ].
+			((card\\13)>=(highestPair)) ifTrue: [ highestPair := (card\\13). returnSuit := (card//13) max: returnSuit . ].
 			].
 		 ].
 	^returnSuit.
