@@ -1,0 +1,35 @@
+printOutDebuggingInfo: cardArray
+	| hand1 hand2 type1 type2 modifiedCards winner|
+	
+	hand1 := Hand new.
+	hand2 := Hand new.
+	modifiedCards := OrderedCollection new.
+	
+	1 to: 10 do: [ :i |
+		((cardArray at: i) \\ 13) == 1 ifTrue: [ 
+			modifiedCards add: ((cardArray at: i) + 11)
+		] ifFalse: [ 
+			modifiedCards add: ((cardArray at: i) - 2)
+		]
+	].
+	
+	hand1 setOdd: modifiedCards.
+	hand2 setEven: modifiedCards.
+
+	type1 := hand1 getType.
+	type2 := hand2 getType.
+	
+	type1 > type2 ifTrue: [ 
+		winner := hand1 getHand.
+	] ifFalse: [
+		type2 > type1 ifTrue: [ 
+			winner := hand2 getHand.
+		] ifFalse: [ 
+			winner := (self conflictResolve: hand1 and: hand2) getHand.
+		].
+	].	
+	
+	Transcript show: '  ---Hand1: ' , (hand1 getHand asString) , ' with type of ' , (type1 asString);cr; 
+	show: '  ---Hand2: ' , (hand2 getHand asString) , ' with type of ' , (type2 asString); cr;
+	show: '  ---Winner is ' , (winner asString);cr.
+
