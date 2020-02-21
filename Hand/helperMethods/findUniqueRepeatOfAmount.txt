@@ -1,1 +1,1 @@
-findUniqueRepeatOfAmount: times 	"This function look for a repeat of any card that repeats itself 'times' number of times"	"Return the value of the card"		1 to: (hand size) do: [ :card | (self hasValue: (card\\13) times: times) ifTrue: [ ^(card\\13) ] ].		^ -1
+findUniqueRepeatOfAmount: times 	"This function look for a repeat of any card that repeats itself 'times' number of times"	"Return the value of the card"		hand do: [ :card | (self hasValue: (card\\13) times: times) ifTrue: [ ^(card\\13) ] ].	^ -1
